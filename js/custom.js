@@ -21,11 +21,11 @@ $.get( "http://www2.shapeshift.io/crowdsales", function( data ) {
 function openPrivModal(){
     "use strict";
     $('#privModal').modal('show');
- }
- function openTermsModal(){
+}
+function openTermsModal(){
     "use strict";
     $('#termsModal').modal('show');
- }
+}
 
 function opentac(){
 swal({
