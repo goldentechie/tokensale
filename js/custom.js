@@ -11,8 +11,8 @@ $.get( "http://www2.shapeshift.io/crowdsales", function( data ) {
     var left = data['remaining'];
     var total = sold + left;
     var ratebtc = data['rateT'];
-    var percentsold = sold/total + '%';
-//    var percentsold = 20 + '%';
+//    var percentsold = sold/total + '%';
+    var percentsold = 20 + '%';
     $('.progress-bar').css('width', percentsold); 
     $('.percentage-label').html( percentsold + " \(" + sold + " sold out of " + total + " \)");
     $('.ratebtc').html( ratebtc );
@@ -21,11 +21,7 @@ $.get( "http://www2.shapeshift.io/crowdsales", function( data ) {
 function openPrivModal(){
     "use strict";
     $('#privModal').modal('show');
-}
-function openTermsModal(){
-    "use strict";
-    $('#termsModal').modal('show');
-}
+ }
 
 function opentac(){
 swal({
@@ -39,3 +35,12 @@ function(){
 window.open("crowdsale/index.html","_self");
 });
 }
+
+var nextYear = moment.tz("2015-08-04 06:00", "America/Los_Angeles");
+
+console.log(nextYear);
+ 
+$('#clock').countdown(nextYear.toDate(), function(event) {
+  $(this).html(event.strftime('%H Hours, %M Minutes, %S Seconds'));
+});
+
